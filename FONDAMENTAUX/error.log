@@ -1,0 +1,18 @@
+[29-Jul-2024 14:58:15 Europe/Paris] PHP Warning:  Undefined variable $str2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 46
+[29-Jul-2024 14:58:15 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 14:58:15 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
+[29-Jul-2024 14:58:15 Europe/Paris] PHP Warning:  Undefined variable $n2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 51
+[29-Jul-2024 14:58:15 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 14:58:15 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
+[29-Jul-2024 14:58:23 Europe/Paris] PHP Warning:  Undefined variable $str2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 46
+[29-Jul-2024 14:58:23 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 14:58:23 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
+[29-Jul-2024 14:58:23 Europe/Paris] PHP Warning:  Undefined variable $n2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 51
+[29-Jul-2024 14:58:23 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 14:58:23 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
+[29-Jul-2024 14:58:42 Europe/Paris] PHP Warning:  Undefined variable $str2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 46
+[29-Jul-2024 14:58:42 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 14:58:42 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
+[29-Jul-2024 15:02:58 Europe/Paris] PHP Warning:  Undefined variable $str2 in C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php on line 46
+[29-Jul-2024 15:02:58 Europe/Paris] PHP Stack trace:
+[29-Jul-2024 15:02:58 Europe/Paris] PHP   1. {main}() C:\Users\nilki\Desktop\Cours\PHP\FONDAMENTAUX\type_de_donnee.php:0
