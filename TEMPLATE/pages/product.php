@@ -7,47 +7,63 @@
     </form>
 </div>
 
-<div class="container-fluid tm-container-content tm-mt-60">
-    <div class="row mb-4">
-        <h2 class="col-12 tm-text-primary"><?php strtoupper($_GET["id"]) ?></h2>
-    </div>
-    <div class="row tm-mb-90">
-        <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-            <img src="img/img-01-big.jpg" alt="Image" class="img-fluid">
-        </div>
-        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
-            <div class="tm-bg-gray tm-video-details">
-                <p class="mb-4">
-                    Please support us by making <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a PayPal donation</a>. Nam ex nibh, efficitur eget libero ut, placerat aliquet justo. Cras nec varius leo.
-                </p>
-                <div class="text-center mb-5">
-                    <a href="#" class="btn btn-primary tm-btn-big">Download</a>
+<?php
+
+$articles = getArticles();
+foreach ($articles as $article) {
+    if (strtolower($article["title"]) == strtolower($_GET["id"])) {
+        $name = $article["title"];
+        $date = $article["date"];
+        $views = $article["views"];
+        $image = $article["image"];
+?>
+
+        <div class="container-fluid tm-container-content tm-mt-60">
+            <div class="row mb-4">
+                <h2 class="col-12 tm-text-primary"><?php echo ucfirst($name) ?></h2>
+            </div>
+            <div class="row tm-mb-90">
+                <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                    <img src="<?php echo "./img/" . $image ?>" alt="Image" class="img-fluid w-100">
                 </div>
-                <div class="mb-4 d-flex flex-wrap">
-                    <div class="mr-4 mb-2">
-                        <span class="tm-text-gray-dark">Dimension: </span><span class="tm-text-primary">1920x1080</span>
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                    <div class="tm-bg-gray tm-video-details">
+                        <p class="mb-4">
+                            Nombre de vues : <?php echo $views ?>K vues<br />
+                            Date : <?php echo $date ?>
+                        </p>
+                        <div class="text-center mb-5">
+                            <a href="#" class="btn btn-primary tm-btn-big">Download</a>
+                        </div>
+                        <div class="mb-4 d-flex flex-wrap">
+                            <div class="mr-4 mb-2">
+                                <span class="tm-text-gray-dark">Dimension: </span><span class="tm-text-primary">1920x1080</span>
+                            </div>
+                            <div class="mr-4 mb-2">
+                                <span class="tm-text-gray-dark">Format: </span><span class="tm-text-primary">JPG</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="tm-text-gray-dark mb-3">License</h3>
+                            <p>Free for both personal and commercial use. No need to pay anything. No need to make any attribution.</p>
+                        </div>
+                        <div>
+                            <h3 class="tm-text-gray-dark mb-3">Tags</h3>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Cloud</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Bluesky</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Nature</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Background</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Night</a>
+                            <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Real Estate</a>
+                        </div>
                     </div>
-                    <div class="mr-4 mb-2">
-                        <span class="tm-text-gray-dark">Format: </span><span class="tm-text-primary">JPG</span>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <h3 class="tm-text-gray-dark mb-3">License</h3>
-                    <p>Free for both personal and commercial use. No need to pay anything. No need to make any attribution.</p>
-                </div>
-                <div>
-                    <h3 class="tm-text-gray-dark mb-3">Tags</h3>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Cloud</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Bluesky</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Nature</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Background</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Night</a>
-                    <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Real Estate</a>
                 </div>
             </div>
-        </div>
-    </div>
+    <?php
+    };
+};
+    ?>
     <div class="row mb-4">
         <h2 class="col-12 tm-text-primary">
             Related Photos
@@ -159,4 +175,4 @@
             </div>
         </div>
     </div> <!-- row -->
-</div>
+        </div>
