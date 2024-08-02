@@ -2,7 +2,30 @@
 // déclarer IMPERATIVEMENT session_start() en tout début de script ET AVANT TOUTE SORTIE (echo) OU REDIRECTION (header('Location')) envisagées.
 session_start();
 
-?>
+//Si l'appel de la page "login.php" provient de "logout.php"
+if (isset($_SESSION['logout'])) {
+
+    $logout_message = $_SESSION['logout'];
+
+    //Detruire les variables de sessions (session toujours existante)
+    session_unset();
+
+    //Destruction de la session
+    session_destroy();
+};
+
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    // Récupérer les données utilisateurs sans des variables de sessions
+    // $_SESSION est un tableau associatif
+    $_SESSION['user'] = htmlspecialchars($_POST['user']);
+    $_SESSION['password'] = htmlspecialchars($_POST['password']);
+    //Redirection vers la page welcome.php
+    header('Location: welcome.php');
+    exit(); // pour éviter que le reste du script se soit exécuté après la redirection
+} ?>
 
 <html lang="fr">
 
@@ -69,10 +92,15 @@ session_start();
 </head>
 
 <body>
-    <form action="" method="POST">
-        <p>
-            <label for="user">utilisateur:</label>
-            <input type="text" id="user" name="user">
+    <form action="welcome.php" method="POST">
+
+        <?php
+        $logout_message = $logout_message ??= "";
+        echo "<p>" . $logout_message . "<p>";
+        ?>
+
+        <label for="user">utilisateur:</label>
+        <input type="text" id="user" name="user">
         </p>
         <p>
             <label for="password">mot de passe:</label>
@@ -81,7 +109,7 @@ session_start();
         <input type="hidden" name='hidden' value="<?php echo date('d/m/Y H:i:s'); ?>">
         <input type="submit" name="submit" value="Envoyer">
         <p>
-            Déjà inscrit ? : <a href="login.php"> Connectez-vous</a>
+            Pas encpre inscrit ? : <a href="register.php"> Inscrivez-vous</a>
         </p>
     </form>
 </body>

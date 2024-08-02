@@ -2,6 +2,8 @@
 // déclarer IMPERATIVEMENT session_start() en tout début de script ET AVANT TOUTE SORTIE (echo) OU REDIRECTION (header('Location')) envisagées.
 session_start();
 
+
+
 ?>
 
 <html lang="fr">
@@ -39,7 +41,9 @@ session_start();
             font-weight: bold;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -69,10 +73,14 @@ session_start();
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="add.php" method="POST">
         <p>
             <label for="user">utilisateur:</label>
             <input type="text" id="user" name="user">
+        </p>
+        <p>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email">
         </p>
         <p>
             <label for="password">mot de passe:</label>
