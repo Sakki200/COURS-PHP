@@ -26,8 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $connection->query($sql);
 
         if ($result->rowCount() > 0) {
-
-            $result->fetch(PDO::FETCH_OBJ);
+          $result = $stmt->fetch(PDO::FETCH_OBJ);
+            // Vérification du mot de passe
+            if (password_verify($password, $result->password)) {
+                // Initialiser les variables de session si le mot de passe est correct
+                $_SESSION['username'] = $result->username;
+                echo "Connexion réussie, bienvenue " . $_SESSION['username']; 
+            } else {
+                echo "Mot de passe incorrect";
+            }
         } else {
             echo "Aucun résultat trouvé";
         }
